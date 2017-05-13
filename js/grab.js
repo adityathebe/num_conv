@@ -22,7 +22,7 @@ function oct_conv() {
 }
 
 function hex_conv() {
-	binary.value = octal_converter(octal.value, 2);
-	decimal.value = octal_converter(octal.value, 10);
-	hexDecimal.value = octal_converter(octal.value, 16);
+	binary.value = hex_converter(hexDecimal.value, 2);
+	decimal.value = hex_converter(hexDecimal.value, 10);
+	octal.value = hex_converter(hexDecimal.value, 8);
 }
