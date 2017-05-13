@@ -1,0 +1,18 @@
+body {
+	background-color: #e74c3c; /*#3498db*/;
+	text-align: center;
+}
+
+.row{
+	font-weight: bold;
+	margin-top: 100px;
+}
+
+.footer {
+	margin-top:120px;
+	float: right;
+	font-family: Comic Sans MS, Comic Sans, cursive;
+	font-size: 15px;
+	font-style: italic;
+	color: white;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Number System Conversion</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel = "stylesheet" type="text/css" href="css/main.css" />
+	<link rel = "stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<!-- p5 libaries -->
+	<script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+	<script language="javascript" src="libraries/p5.dom.js"></script>
+</head>
+<body>
+	<div class="jumbotron">
+		<h1> Number Conversion </h1>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1" >Binary</span>
+					<input type="text" class="form-control" placeholder="1011" onclick="setf('bin')" id="bin-val">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">Decimal</span>
+					<input type="text" class="form-control" placeholder="11" id="dec-val" onclick="setf('dec')">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">Octal</span>
+					<input type="text" class="form-control" placeholder="13" id="oct-val" onclick="setf('oct')">
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1">HexaDecimal</span>
+					<input type="text" class="form-control" placeholder="B" id="hex-val" onclick="setf('hex')">
+				</div>
+			</div>
+		</div> <!-- Input Rows -->
+		<div class="footer">
+			<p> Created by - Aditya Thebe</p>
+		</div>
+	</div>
+
+	<!-- JavaScript -->
+	<script language="javascript" src="js/grab.js"></script> 
+	<script language="javascript" src="js/convert.js"></script> 
+	<script language="javascript" src="js/sketch.js"></script> 
+</body>
+</html>
