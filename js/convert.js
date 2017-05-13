@@ -2,25 +2,29 @@ hex_value = ['A','B','C','D','E','F']
 hex_index = [10, 11, 12, 13, 14, 15]
 
 function decimal_converter (user_input, to_convert) {
-	var result = [];
-	var rem;
-	while(user_input > 0) {
-		rem = (user_input % to_convert);
-		user_input = Math.floor(user_input / to_convert)
+	if(/^[0-9]+$/.test(user_input)) {
+		var result = [];
+		var rem;
+		while(user_input > 0) {
+			rem = (user_input % to_convert);
+			user_input = Math.floor(user_input / to_convert)
 
-		// Assigning respective alphabets for HexaDecimal
-		if(to_convert == 16) {
-			for(var i=10; i<16;i++) {
-				if(rem == i) {
-					rem = hex_value[i-10];
+			// Assigning respective alphabets for HexaDecimal
+			if(to_convert == 16) {
+				for(var i=10; i<16;i++) {
+					if(rem == i) {
+						rem = hex_value[i-10];
+					}
 				}
 			}
+			result.push(rem)
 		}
-		result.push(rem)
+		output = result.reverse();
+		var outputString = output.join("");
+		return outputString;
+	} else {
+		return "";
 	}
-	output = result.reverse();
-	var outputString = output.join("");
-	return outputString;
 }
 
 function to_decimal (user_input,to_convert) {
@@ -35,23 +39,31 @@ function to_decimal (user_input,to_convert) {
 }
 
 function binary_converter (user_input, to_convert) {
-	var temp = to_decimal(user_input, 2)
-	if(to_convert == 10)
-		return temp;
-	else if(to_convert == 8)	
-		return (decimal_converter(temp, to_convert));
-	else if(to_convert == 16)	
-		return (decimal_converter(temp, to_convert));
+	if(/^[0-1]+$/.test(user_input)) {
+		var temp = to_decimal(user_input, 2)
+		if(to_convert == 10)
+			return temp;
+		else if(to_convert == 8)	
+			return (decimal_converter(temp, to_convert));
+		else if(to_convert == 16)	
+			return (decimal_converter(temp, to_convert));
+	} else{
+		return "";
+	}
 }
 
 function octal_converter (user_input, to_convert) {
-	var temp = to_decimal(user_input, 8)
-	if(to_convert == 10)
-		return temp;
-	else if(to_convert == 2)	
-		return (decimal_converter(temp, to_convert));
-	else if(to_convert == 16)	
-		return (decimal_converter(temp, to_convert));
+	if(/^[0-7]+$/.test(user_input)) {
+		var temp = to_decimal(user_input, 8)
+		if(to_convert == 10)
+			return temp;
+		else if(to_convert == 2)	
+			return (decimal_converter(temp, to_convert));
+		else if(to_convert == 16)	
+			return (decimal_converter(temp, to_convert));
+	}else{
+		return "";
+	}
 }
 
 
